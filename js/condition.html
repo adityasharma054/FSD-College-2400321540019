@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition</title>
+</head>
+<body>
+    <script>
+     
+
+let num = parseInt(prompt("Enter an integer: "));
+let originalNum = num;
+let result = 0;
+let numDigits = String(num).length; 
+
+
+while (originalNum !== 0) {
+    let remainder = originalNum % 10;
+    result = result + Math.pow(remainder, numDigits);
+    originalNum = Math.floor(originalNum / 10);
+}
+
+
+if (result === num) {
+    console.log(num + " is an Armstrong number.");
+} else {
+    console.log(num + " is not an Armstrong number.");
+}
+    </script>
+</body>
+</html>
