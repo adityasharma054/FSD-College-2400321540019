@@ -6,51 +6,77 @@
     <title>BUS BOOK</title>
 </head>
 <body>
+
     <center>
-<div style="background-color: cornflowerblue; border: 7px solid aqua ; height: 600px; width: 400px;">
+    <div style="background-color: cornflowerblue; border: 7px solid aqua; height: 650px; width: 450px;">
         <center>
             <h1>Welcome Bus Booking System</h1>
         </center>
-        <h3> User Informations</h3>
-        <label for="">Name:</label>
-        <input type="text">
-        <br> <br>
-        <label for="">Address:</label>
-        <select name="" id="">Select your city
-        <option value="">Ghaziabad</option>
-        <option value="">Shadra</option>
-        <option value="">Rohini</option>
-        <option value="">Noida</option>
-        </select>
+        <h3>User Informations</h3>
 
-        <br>
-        <br>
+        <label for="">Name:</label>
+        <input type="text" id="userName">
+        <br><br>
+
+        <label for="">Address:</label>
+        <select id="userCity">
+            <option value="Ghaziabad">Ghaziabad</option>
+            <option value="Shadra">Shadra</option>
+            <option value="Rohini">Rohini</option>
+            <option value="Noida">Noida</option>
+        </select>
+        <br><br>
+
         <label for="">User age:</label>
-        <input type="number" name="" id="">
+        <input type="number" id="userAge">
         <br><br>
 
         <label for="">User Aadhar no:</label>
-        <input type="number">
+        <input type="number" id="userAadhar">
         <br><br>
-         <h3>Bus Booking Options:</h3>
-         <p>
-            Select Bus options: AC Bus: <input type="radio" name="" id="" > 
-            Non-AC Bus: <input type="radio" name="" id="" > 
-            
-         </p>
-        
-         <p>Select Your Sheet : <select name="" id="">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
-        </select></p>
-        <button>Click for Save</button>
-           
-         
+
+        <h3>Bus Booking Options:</h3>
+        <p>
+            Select Bus options: 
+            AC Bus 2000rs: <input type="radio" name="busType" value="2000" id="acBus">
+            Non-AC Bus 1000rs: <input type="radio" name="busType" value="1000" id="nonAcBus">
+        </p>
+
+        <p>Select Your Seat:
+            <select id="seatNo">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </p>
+
+        <p>Number of Tickets:
+            <input type="number" id="ticketCount" min="1" value="1">
+        </p>
+
+        <button onclick="bookTicket()">Click for Save</button>
 
     </div>
     </center>
+
+    <script>
+    function bookTicket() {
+        let tickets = document.getElementById("ticketCount").value;
+        let pricePerTicket = 0;
+
+        if (document.getElementById("acBus").checked) {
+            pricePerTicket = 2000;
+        } else if (document.getElementById("nonAcBus").checked) {
+            pricePerTicket = 1000;
+        }
+
+        let totalPrice = pricePerTicket * tickets;
+
+        alert("Total Price: ₹" + totalPrice);
+    }
+</script>
+
 </body>
 </html>
