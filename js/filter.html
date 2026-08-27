@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     const num=[1,2,3,4,5,6,7,8,9,10];
+    //   const even=num.filter((num)=>num%2==0);
+    //   console.log("num==",num);
+    //   console.log("even==",even); 
+    // const num=[1,2,3,4,5,6,7,8,9,10];
+    // const even=num.filter((num)=>num%2==0);
+    // const squre= even.map((num)=>num*num);
+    // console.log("square==",squre);
+    const num=[1,2,3,4,5,6,7,8,9,10];
+    const even=num.filter((num)=>num%2==0);
+    const squre= even.map((num)=>num*num);
+    const sum=squre.reduce((acc,cur)=>acc+cur);
+    console.log("sum==",sum);
+
+</script>
+</body>
+</html>
